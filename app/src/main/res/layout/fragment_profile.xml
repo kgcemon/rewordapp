@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.fragments.Profile">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:elevation="@dimen/padding_10">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:src="@mipmap/ic_launcher"
+            app:riv_corner_radius="5dp" />
+
+        <TextView
+            android:id="@+id/appname"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/icon"
+            android:fontFamily="@font/museo_bold"
+            android:gravity="center"
+            android:text="@string/app_name_part_one"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/appname"
+            android:fontFamily="@font/museo_bold"
+            android:gravity="center"
+            android:text="@string/app_name_part_two"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/bg_profile_round_bottom"
+        android:elevation="6dp"
+    />
+    <RelativeLayout
+        android:id="@+id/cv_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:elevation="7dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/uiswitch"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            app:lottie_rawRes="@raw/ui_switch"
+            android:layout_marginEnd="20dp"
+            android:elevation="5dp"
+            android:scaleType="fitXY"
+            android:layout_alignParentEnd="true"
+            android:scaleY="2.8"
+            android:scaleX="2.1"
+            />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:src="@drawable/ic_user"
+            app:tint="@color/white" />
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/image"
+            android:layout_toStartOf="@id/uiswitch">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="25sp"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/museo_semi_bold"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_18"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_below="@id/username"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/museo_regular"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/email"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:fontFamily="@font/museo_regular"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/BANNER"
+        android:layout_below="@+id/cv_profile">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/padding_10"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_marginEnd="@dimen/padding_10"
+                android:layout_marginBottom="10dp"
+                android:clipToPadding="true"
+                android:elevation="8dp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_profile"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_mycoin"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dimen_15dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="My Coin"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin_20dp"
+                        android:layout_weight="1"
+                        android:gravity="end">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:lottie_rawRes="@raw/coin"
+                            android:elevation="5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            app:lottie_loop="true"
+                            android:scaleType="fitXY"
+                            app:lottie_autoPlay="true"
+                            android:scaleY="2.8"
+                            android:scaleX="2.8"
+                            />
+
+                        <TextView
+                            android:id="@+id/coin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@id/lottie"
+                            android:fontFamily="@font/museo_bold"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginStart="@dimen/padding_10"
+                android:layout_marginEnd="10dp"
+                android:paddingBottom="@dimen/padding_10"
+                android:scrollbars="vertical"/>
+
+            <RelativeLayout
+                android:id="@+id/cv_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_10"
+                android:background="@drawable/bg_border">
+
+                <RelativeLayout
+                    android:id="@+id/v11"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:background="@drawable/bg_round">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/ic_nav_profile"
+                        app:tint="@color/white" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_my_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_toEndOf="@+id/v11"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:text="My Profile"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_my_profile_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_my_profile"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/v11"
+                    android:fontFamily="@font/museo_light"
+                    android:text="View/Edit Profile"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/padding_10"
+                    android:src="@drawable/ic_arrow_next" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cv_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_10"
+                android:visibility="gone"
+                android:background="@drawable/bg_border">
+
+                <RelativeLayout
+                    android:id="@+id/v1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:background="@drawable/bg_round">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_history" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_toEndOf="@+id/v1"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:text="History"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_history_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_history"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/v1"
+                    android:fontFamily="@font/museo_light"
+                    android:text="Collect Reward &amp; Gift Card"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/padding_10"
+                    android:src="@drawable/ic_arrow_next" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cv_reward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_10"
+                android:layout_marginEnd="@dimen/padding_10"
+                android:background="@drawable/bg_border">
+
+                <RelativeLayout
+                    android:id="@+id/v2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:background="@drawable/bg_round">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:layout_marginStart="@dimen/padding_10"
+                        android:layout_marginTop="@dimen/padding_10"
+                        android:layout_marginEnd="@dimen/padding_10"
+                        android:layout_marginBottom="@dimen/padding_10"
+                        android:src="@drawable/ic_reward" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_reward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_toEndOf="@+id/v2"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:text="Withdraw"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_rewards_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_reward"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/v2"
+                    android:fontFamily="@font/museo_light"
+                    android:text="Withdraw"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/padding_10"
+                    android:src="@drawable/ic_arrow_next" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cv_changelang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_10"
+                android:layout_marginStart="@dimen/padding_10"
+                android:layout_marginEnd="@dimen/padding_10"
+                android:background="@drawable/bg_border">
+
+                <RelativeLayout
+                    android:id="@+id/v21"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:background="@drawable/bg_round">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/padding_10"
+                        android:layout_marginTop="@dimen/padding_10"
+                        android:layout_marginEnd="@dimen/padding_10"
+                        android:layout_marginBottom="@dimen/padding_10"
+                        android:src="@drawable/ic_translate"
+                        app:tint="@color/white" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_choose_language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_toEndOf="@+id/v21"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:text="Choose Language"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_choose_language_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_choose_language"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/v21"
+                    android:fontFamily="@font/museo_light"
+                    android:text="Choose Language"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/padding_10"
+                    android:src="@drawable/ic_arrow_next" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cv_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_10"
+                android:layout_marginEnd="@dimen/padding_10"
+                android:layout_marginTop="@dimen/padding_10"
+                android:background="@drawable/bg_border">
+
+                <RelativeLayout
+                    android:id="@+id/v3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:background="@drawable/bg_round">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:src="@drawable/ic_support" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_toEndOf="@+id/v3"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:text="Support"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_support_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_support"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/v3"
+                    android:fontFamily="@font/museo_light"
+                    android:text="Contact us &amp; send your Feedback"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/padding_10"
+                    android:src="@drawable/ic_arrow_next" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/cv_privacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_10"
+                android:layout_marginEnd="@dimen/padding_10"
+                android:layout_marginTop="@dimen/padding_10"
+                android:background="@drawable/bg_border">
+
+                <RelativeLayout
+                    android:id="@+id/v6"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:background="@drawable/bg_round">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:src="@drawable/ic_privacy_policy" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_privacypolicy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_toEndOf="@+id/v6"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:text="Privacy Policy"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_privacypolicy_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_privacypolicy"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/v6"
+                    android:fontFamily="@font/museo_light"
+                    android:text="Click to read Privacy policy"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/padding_10"
+                    android:src="@drawable/ic_arrow_next" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cv_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_10"
+                android:layout_marginEnd="@dimen/padding_10"
+                android:layout_marginTop="@dimen/padding_10"
+                android:background="@drawable/bg_border">
+
+                <RelativeLayout
+                    android:id="@+id/v7"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:background="@drawable/bg_round">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:src="@drawable/ic_aboutus" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_about_us"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_toEndOf="@+id/v7"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:text="About us"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_about_us_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_about_us"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/v7"
+                    android:fontFamily="@font/museo_light"
+                    android:text="About us"
+
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/padding_10"
+                    android:src="@drawable/ic_arrow_next" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cv_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_10"
+                android:layout_marginEnd="@dimen/padding_10"
+                android:layout_marginTop="@dimen/padding_10"
+                android:background="@drawable/bg_border"
+                android:backgroundTint="@color/red">
+
+                <RelativeLayout
+                    android:id="@+id/v8"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:background="@drawable/bg_round"
+                    android:backgroundTint="@color/red">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/padding_10"
+                        android:layout_marginTop="@dimen/padding_10"
+                        android:layout_marginEnd="@dimen/padding_10"
+                        android:layout_marginBottom="@dimen/padding_10"
+                        android:src="@drawable/ic_logout" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_toEndOf="@+id/v8"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:text="Logout"
+                    android:textColor="@color/red"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_logout_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_logout"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/v8"
+                    android:fontFamily="@font/museo_light"
+                    android:text="Logout this account"
+                    android:textColor="@color/red"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/padding_10"
+                    android:src="@drawable/ic_arrow_next"
+                    app:tint="@color/red" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cv_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_10"
+                android:layout_marginEnd="@dimen/padding_10"
+                android:layout_marginTop="@dimen/padding_10"
+                android:background="@drawable/bg_border"
+                android:backgroundTint="@color/red">
+
+                <RelativeLayout
+                    android:id="@+id/v9"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:background="@drawable/bg_round"
+                    android:backgroundTint="@color/red">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:src="@drawable/ic_baseline_delete_24" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_delete_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
+                    android:layout_toEndOf="@+id/v9"
+                    android:fontFamily="@font/museo_semi_bold"
+                    android:text="Delete Account"
+                    android:textColor="@color/red"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_delete_account_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_delete_account"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/v9"
+                    android:fontFamily="@font/museo_light"
+                    android:text="After delete can\'t recover account"
+                    android:textColor="@color/red"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/padding_10"
+                    android:src="@drawable/ic_arrow_next"
+                    app:tint="@color/red" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/BANNER"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>

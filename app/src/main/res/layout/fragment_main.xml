@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/toolbar"
+        android:elevation="@dimen/padding_10">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:src="@mipmap/ic_launcher"
+            app:riv_corner_radius="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_toEndOf="@id/icon"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@+id/lytFun"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/museo_bold"
+                android:gravity="center"
+                android:text="@string/app_name_part_one"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/tv_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Welcome"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/lytFun"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/padding_10"
+            android:clipToPadding="false"
+            android:focusable="true"
+            tools:ignore="RelativeOverlap">
+
+
+
+            <ImageView
+                android:id="@+id/refresh"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_baseline_autorenew_24"
+                app:tint="@color/colorPrimaryDark"
+                android:layout_toStartOf="@+id/layoutCoin"
+                android:contentDescription="@string/app_name"/>
+
+            <RelativeLayout
+                android:id="@+id/layoutCoin"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_height="50dp">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottie"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    app:lottie_rawRes="@raw/coin"
+                    android:layout_alignParentStart="true"
+                    android:elevation="5dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_loop="true"
+                    android:scaleType="fitXY"
+                    app:lottie_autoPlay="true"
+                    android:scaleY="2.8"
+                    android:scaleX="2.8"
+                    />
+
+
+                <LinearLayout
+                    android:id="@+id/lytPoints"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/lottie"
+                    android:background="@drawable/bg_balance"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="-18dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:id="@+id/coins"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/museo_semi_bold"
+                        android:gravity="center"
+                        android:text="0"
+                        android:paddingStart="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_below="@id/top_layout"
+        android:id="@+id/appbar_reward_point_fragment"
+        android:layout_width="match_parent"
+        app:elevation="@dimen/padding_10"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:background="@color/transparent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:tabSelectedTextColor="@color/white"
+            style="@style/ChipTabLayout"
+            android:background="@drawable/bg_tab"
+            android:scrollbarStyle="insideInset"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:tabIndicatorColor="@color/transparent"
+            app:tabIndicatorHeight="0dp"
+            app:tabTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/catviewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar_reward_point_fragment"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</RelativeLayout>

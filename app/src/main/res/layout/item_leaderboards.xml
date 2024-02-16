@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    app:cardBackgroundColor="@color/toolbar"
+    android:layout_height="74dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp"
+    android:clipToPadding="true"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_border">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/padding_10"
+            android:src="@drawable/userpro"
+            app:riv_corner_radius="5dp"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/image"
+            android:layout_toStartOf="@id/layout_coin"
+            android:fontFamily="@font/museo_semi_bold"
+            android:maxLines="1"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            tools:ignore="RelativeOverlap" />
+
+        <TextView
+            android:id="@+id/tvcoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvName"
+            android:layout_marginStart="20dp"
+            android:layout_toStartOf="@id/layout_coin"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/image"
+            android:maxLines="1"
+            android:text="0"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            tools:ignore="RelativeOverlap,SpUsage" />
+
+        <RelativeLayout
+            android:id="@+id/layout_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottie"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    app:lottie_rawRes="@raw/coin"
+                    android:layout_alignParentStart="true"
+                    android:elevation="5dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_loop="true"
+                    android:scaleType="fitXY"
+                    app:lottie_autoPlay="true"
+                    android:scaleY="2.8"
+                    android:scaleX="2.8"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/lytPoints"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/lottie"
+                    android:background="@drawable/bg_balance"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="-18dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:id="@+id/coins"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/museo_semi_bold"
+                        android:gravity="center"
+                        android:text="0"
+                        android:paddingStart="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

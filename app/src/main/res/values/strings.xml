@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Earning Point</string>
+    <string name="app_name_part_one" translatable="false">Earning</string>
+    <string name="app_name_part_two" translatable="false">Point</string>
+
+    <!--  ToDO : Applovin SDK Key  -->
+    <string name="APPLOVIN_SDK_KEY" translatable="false">xxx</string>
+
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layout_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar"
+        android:elevation="8dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="29dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="center"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/BANNER"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+     <LinearLayout
+         android:id="@+id/shimmer_view_container"
+         android:layout_below="@id/layout_toolbar"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="@dimen/padding_10"
+         android:layout_marginEnd="10dp"
+         android:layout_marginTop="@dimen/padding_10"
+         android:layout_width="match_parent"
+         android:orientation="vertical">
+         <include layout="@layout/item_placeholder"/>
+     </LinearLayout>
+
+    <include android:id="@+id/no_result"
+        layout="@layout/no_result"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/shimmer_view_container"
+        android:id="@+id/recycler_viewApps"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="@dimen/padding_10"
+        android:visibility="gone"
+        android:layout_marginTop="5dp"
+        android:scrollbars="vertical" />
+
+
+</RelativeLayout>

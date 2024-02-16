@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "375928904930",
+    "project_id": "fluid-door-412514",
+    "storage_bucket": "fluid-door-412514.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375928904930:android:5dd8f2e3e5e847a0e312bb",
+        "android_client_info": {
+          "package_name": "com.app.earningpoints"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkLA4fP2gXbTxTsLdWITSJ-eSdgOPfN2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
